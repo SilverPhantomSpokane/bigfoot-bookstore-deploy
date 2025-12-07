@@ -13,14 +13,21 @@ class ProductRequest extends FormRequest
     }
 
     // Validation rules
-    public function rules(): array
-    {
-        return [
-            'name'          => 'required|string|max:255',
-            'price'         => 'required|numeric|min:0',
-            'department_id' => 'required|exists:departments,id',
-            'description'   => 'nullable|string',
-            'image'         => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-        ];
+  public function rules(): array
+{
+    $rules = [
+        'name'        => 'required|string|max:255',
+        'price'       => 'required|numeric|min:0',
+        'description' => 'nullable|string',
+        'image'       => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+    ];
+
+    // department_id — только при создании
+    if ($this->isMethod('post')) {
+        $rules['department_id'] = 'required|exists:departments,id';
     }
+
+    return $rules;
+}
+
 }
