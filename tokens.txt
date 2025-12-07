@@ -1,0 +1,3 @@
+User: admin@site.com - Token: 1|KT1DZwImMSd8zu9ekRxnUFVOBciXkVeb4o1VQj4g9e7e9b4a
+User: manager@site.com - Token: 2|gTljwpm18Ol35TpZzmejf2va9mS0AYlwOaGMg1Dt92974e34
+User: user@site.com - Token: 3|UsNU07PXtOagTyWIMEXFax5K2UNnVuaWoLXyfnZd11f69d08
