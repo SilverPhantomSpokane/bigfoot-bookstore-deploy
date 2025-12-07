@@ -10,31 +10,34 @@
     </a>
     @endcan
 </div>
-
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
     @forelse($departments as $department)
-        <div class="bg-white p-5 rounded-xl shadow hover:shadow-md transition flex flex-col justify-between">
-            <div class="flex-1">
+        <div class="bg-white p-5 rounded-xl shadow hover:shadow-md transition flex flex-col justify-between h-full">
+            
+            <div class="flex-1 flex items-center justify-center">
                 <h2 class="text-lg font-semibold text-gray-800 mb-3 text-center">
                     {{ ucfirst($department->name) }}
                 </h2>
             </div>
 
-            <div class="mt-3 space-y-2">
+            <div class="mt-4 space-y-2">
                 <a href="{{ route('departments.show', $department) }}" 
                    class="block bg-blue-500 text-white py-1.5 rounded hover:bg-blue-600 text-center transition text-sm">
                     View
                 </a>
 
                 <div class="flex justify-center space-x-2">
-                     @can('update', $department)
+
+                    @can('update', $department)
                     <a href="{{ route('departments.edit', $department) }}" 
                        class="flex-1 bg-green-500 text-white py-1.5 rounded hover:bg-green-600 text-center transition text-sm">
                         Edit
                     </a>
                     @endcan
+
                     @can('delete', $department)
-                    <form action="{{ route('departments.destroy', $department) }}" method="POST" 
+                    <form action="{{ route('departments.destroy', $department) }}" 
+                          method="POST" 
                           onsubmit="return confirm('Are you sure you want to delete this department?');" 
                           class="flex-1">
                         @csrf
@@ -45,11 +48,14 @@
                         </button>
                     </form>
                     @endcan
+
                 </div>
             </div>
+
         </div>
     @empty
         <p class="text-gray-600 col-span-full text-center">No departments available yet.</p>
     @endforelse
 </div>
+
 @endsection
