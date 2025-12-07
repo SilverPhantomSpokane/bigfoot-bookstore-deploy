@@ -7,15 +7,12 @@
             </div>
 
             <div class="flex space-x-6">
-                <a href="/departments" class="hover:text-blue-600 transition">Departments</a>
-                <a href="/products" class="hover:text-blue-600 transition">Books</a>
-                <a href="/dashboard" class="hover:text-blue-600 transition">Dashboard</a>
+                <a href="/departments" class="hover:text-blue-600 transition">Departments </a>
+                <a href="/products" class="hover:text-blue-600 transition"> &nbsp;| Books </a>
+                <a href="/dashboard" class="hover:text-blue-600 transition"> &nbsp;| Dashboard</a>
             </div>
 
-            <div>
-                <a href="mailto:info@bigfoot.edu" class="hover:text-blue-600 transition">Contact</a>
-            </div>
-
+        
         </div>
     </div>
 </footer>
